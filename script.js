@@ -331,7 +331,8 @@ function createSessionCard(session, speakers = []) {
                 <img src="${speaker.profilePicture}" alt="${speaker.fullName}" class="session-speaker-avatar" onerror="this.src='assets/images/logo.png'">
                 <div class="session-speaker-text">
                     <span class="session-speaker-name">${speaker.fullName}</span>
-                    <span class="session-speaker-company">${speaker.company || ''}</span>
+                    <span class="session-speaker-tagline">${speaker.tagLine || ''}</span>
+                    <span class="session-speaker-company-small">${speaker.company || ''}</span>
                 </div>
             </div>
         `).join('');

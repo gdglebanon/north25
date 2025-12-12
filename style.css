@@ -868,6 +868,19 @@ img {
     font-weight: 500;
 }
 
+.session-speaker-tagline {
+    font-size: 0.75rem;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.session-speaker-company-small {
+    font-size: 0.65rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 2px;
+}
+
 .speaker-company-popup {
     font-size: 1.1rem;
     color: var(--google-blue);
