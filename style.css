@@ -863,7 +863,16 @@ img {
 
 .session-speaker-company {
     font-size: 0.75rem;
-    color: var(--text-light);
+    color: #4a4a4a;
+    /* Darker than var(--text-light) */
+    font-weight: 500;
+}
+
+.speaker-company-popup {
+    font-size: 1.1rem;
+    color: var(--google-blue);
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 /* Mobile Agenda Styles */

@@ -1,8 +1,20 @@
 const devFestData = {
     sessions: [
         {
+            "id": "reg-coffee-001",
+            "title": "Registration & Welcome Coffee",
+            "description": "Get your badge and enjoy some coffee before we start.",
+            "format": "Networking",
+            "level": "Everyone",
+            "room": "Main Auditorium",
+            "time": "08:30 AM - 09:30 AM",
+            "tags": [],
+            "isCommon": true,
+            "targetAudience": "All Attendees"
+        },
+        {
             "id": "cf3d53f8-2f9b-456a-aab4-dfeb00f9df3f",
-            "title": "Opening Keynote: Welcome to Devfest 2025!",
+            "title": "Opening Keynote: Welcome to DevFest!",
             "description": "By GDG , BAU and Minister of State for Technology and AI Kamal Chehade",
             "format": "Keynote",
             "level": "Beginner",
@@ -524,8 +536,8 @@ const devFestData = {
         {
             "id": "fa16bb05-09ae-429b-90d1-178f20ed8e2e",
             "firstName": "Bassel",
-            "lastName": "Al Ayoubi  ",
-            "fullName": "Bassel Al Ayoubi  ",
+            "lastName": "Al Ayoubi",
+            "fullName": "Bassel Al Ayoubi",
             "tagLine": "General Director of Investment and Maintenance - Ministry of Telecommunication",
             "company": "",
             "bio": "General Director of Investment and Maintenance- Ministry of Telecommunication",
@@ -697,7 +709,7 @@ const devFestData = {
             "lastName": "Ghaleb",
             "fullName": "Abed-R Ghaleb",
             "tagLine": "Co-founder & CEO @ SILNI AI",
-            "company": "SILNI AI",
+            "company": "Khawarizme Community & SILNI AI",
             "bio": "Dr. Abed-R Ghaleb is the CEO and founder of SILNI, an AI-powered B2B sales platform, and an organizational strategist with over 15 years\u2019 experience in business development, SaaS solutions, and executive training across the MENA region. Passionate about turning AI potential into practical business wins, \n\nDr. Abed-R Ghaleb empowers companies to bridge the gap between technology and strategy. Whether working with startups or established enterprises, he brings a proven record in AI adoption, market analysis, and sales enablement that drives meaningful results for organizations at every stage.",
             "profilePicture": "https://sessionize.com/image/5063-400o400o1-UDpSa2Ax8Y4DTWoomV1tFr.jpg",
             "socials": {
@@ -766,7 +778,7 @@ const devFestData = {
             "lastName": "Abi Nehme",
             "fullName": "Judy Abi Nehme",
             "tagLine": "Software engineer at Upwork ",
-            "company": "Upwork ",
+            "company": "Upwork",
             "bio": "Judy started his career as an electrical engineer in smart homes and electrical installations before shifting into software engineering. He is currently a software engineer at Upwork, a data structures and algorithms teacher. Occasionally, he helps talent with mock interviews. ",
             "profilePicture": "https://sessionize.com/image/59c4-400o400o1-URnqw6nkqFD6oAsyoHsbBw.png",
             "socials": {
@@ -871,10 +883,24 @@ const devFestData = {
                 "linkedin": "https://www.linkedin.com/in/aichaharrach/",
                 "website": "Not Launched yet"
             }
+        },
+        {
+            "id": "f109efe6-7497-44b7-81a4-e5ae2ec4aee8",
+            "firstName": "Eman",
+            "lastName": "Elrefai",
+            "fullName": "Eman Elrefai",
+            "tagLine": "NLP Engineer | AI Researcher | MSc",
+            "company": "NadSoft",
+            "bio": "Eman Elrefai is a Machine Learning Engineer and Data Scientist with a Master\u2019s degree in Artificial Intelligence and Data Science from Queen\u2019s University. She is a TensorFlow Certified Developer and has published multiple research papers in Natural Language Processing and AI. Eman is passionate about bridging the gap between research and real-world applications through practical, accessible AI solutions.",
+            "profilePicture": "https://sessionize.com/image/36f1-400o400o1-3ekLpdTLmgJpCupksMi1qX.jpg",
+            "socials": {
+                "linkedin": "https://www.linkedin.com/in/eman-elrefai/"
+            }
         }
     ],
     schedule: {
         "timeSlots": [
+            "08:30 AM - 09:30 AM",
             "01:15 PM - 02:10 PM",
             "01:20 PM - 02:00 PM",
             "01:25 PM - 02:00 PM",

@@ -192,8 +192,15 @@ function renderAgenda(container, data) {
                 const roomSessions = chunk.sessions.filter(s => s.room === room);
 
                 roomSessions.forEach(session => {
-                    const speaker = data.speakers.find(s => s.id === session.speakerId);
-                    const sessionCard = createSessionCard(session, speaker);
+                    let sessionSpeakers = [];
+                    if (session.speakers && session.speakers.length > 0) {
+                        sessionSpeakers = session.speakers.map(s => data.speakers.find(ds => ds.id === s.id)).filter(Boolean);
+                    } else if (session.speakerId) {
+                        const speaker = data.speakers.find(s => s.id === session.speakerId);
+                        if (speaker) sessionSpeakers.push(speaker);
+                    }
+
+                    const sessionCard = createSessionCard(session, sessionSpeakers);
                     sessionCard.addEventListener('click', () => openSessionModal(session));
                     trackCol.appendChild(sessionCard);
                 });
@@ -254,8 +261,15 @@ function renderMobileAgenda(sessions, speakers) {
                 </div>
             `;
         } else {
-            const speaker = speakers.find(s => s.id === session.speakerId);
-            card = createSessionCard(session, speaker);
+            let sessionSpeakers = [];
+            if (session.speakers && session.speakers.length > 0) {
+                sessionSpeakers = session.speakers.map(s => speakers.find(ds => ds.id === s.id)).filter(Boolean);
+            } else if (session.speakerId) {
+                const speaker = speakers.find(s => s.id === session.speakerId);
+                if (speaker) sessionSpeakers.push(speaker);
+            }
+
+            card = createSessionCard(session, sessionSpeakers);
             card.addEventListener('click', () => openSessionModal(session));
 
             // Add Room Label for Mobile
@@ -302,13 +316,17 @@ function renderMobileAgenda(sessions, speakers) {
 }
 
 // Helper to create session card HTML (reused)
-function createSessionCard(session, speaker) {
+function createSessionCard(session, speakers = []) {
     const sessionCard = document.createElement('div');
     sessionCard.className = 'session-card';
 
     let speakerHtml = '';
-    if (speaker) {
-        speakerHtml = `
+
+    // Ensure speakers is always an array
+    const speakersList = Array.isArray(speakers) ? speakers : (speakers ? [speakers] : []);
+
+    if (speakersList.length > 0) {
+        speakerHtml = speakersList.map(speaker => `
             <div class="session-speaker-info">
                 <img src="${speaker.profilePicture}" alt="${speaker.fullName}" class="session-speaker-avatar" onerror="this.src='assets/images/logo.png'">
                 <div class="session-speaker-text">
@@ -316,7 +334,7 @@ function createSessionCard(session, speaker) {
                     <span class="session-speaker-company">${speaker.company || ''}</span>
                 </div>
             </div>
-        `;
+        `).join('');
     }
 
     sessionCard.innerHTML = `
@@ -553,7 +571,16 @@ function openSponsorModal(sponsor) {
 
 
 function openSessionModal(session) {
-    const speaker = devFestData.speakers.find(s => s.id === session.speakerId);
+    const speakers = [];
+    if (session.speakers && session.speakers.length > 0) {
+        session.speakers.forEach(s => {
+            const speakerDetail = devFestData.speakers.find(ds => ds.id === s.id);
+            if (speakerDetail) speakers.push(speakerDetail);
+        });
+    } else if (session.speakerId) {
+        const speaker = devFestData.speakers.find(s => s.id === session.speakerId);
+        if (speaker) speakers.push(speaker);
+    }
 
     sessionBody.innerHTML = `
         <div class="modal-header">
@@ -568,25 +595,28 @@ function openSessionModal(session) {
             </div>
         </div>
         <div class="modal-body">
-            <p>${session.description}</p>
-            
-
-            
-            <h4 style="margin-top: 20px;">Target Audience</h4>
-            <p>${session.targetAudience}</p>
-
-            ${speaker ? `
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; cursor: pointer;" onclick="openSpeakerModalById('${speaker.id}')">
-                    <h4>Speaker</h4>
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <img src="${speaker.profilePicture}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" onerror="this.src='assets/images/logo.png'">
-                        <div>
-                            <div style="font-weight: bold; color: var(--google-blue);">${speaker.fullName}</div>
-                            <div style="font-size: 0.9rem; color: var(--text-light);">${speaker.tagLine}</div>
-                        </div>
+            ${speakers.length > 0 ? `
+                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                    <h4 style="margin-top: 0;">${speakers.length > 1 ? 'Speakers' : 'Speaker'}</h4>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        ${speakers.map(speaker => `
+                            <div style="display: flex; align-items: center; gap: 15px; cursor: pointer;" onclick="openSpeakerModalById('${speaker.id}')">
+                                <img src="${speaker.profilePicture}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" onerror="this.src='assets/images/logo.png'">
+                                <div>
+                                    <div style="font-weight: bold; color: var(--google-blue);">${speaker.fullName}</div>
+                                    <div style="font-size: 0.9rem; color: #4a4a4a; font-weight: 500;">${speaker.company || ''}</div>
+                                    <div style="font-size: 0.9rem; color: var(--text-light);">${speaker.tagLine}</div>
+                                </div>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
             ` : ''}
+
+            <p>${session.description}</p>
+            
+            <h4 style="margin-top: 20px;">Target Audience</h4>
+            <p>${session.targetAudience}</p>
         </div>
     `;
 
@@ -607,6 +637,7 @@ function openSpeakerModal(speaker) {
             <img src="${speaker.profilePicture}" alt="${speaker.fullName}" onerror="this.src='assets/images/logo.png'">
             <div class="speaker-info">
                 <h3>${speaker.fullName}</h3>
+                <p class="speaker-company-popup">${speaker.company || ''}</p>
                 <p class="tagline">${speaker.tagLine}</p>
                 <div class="modal-body">
                     <p>${speaker.bio}</p>
@@ -614,7 +645,7 @@ function openSpeakerModal(speaker) {
                 <div class="social-links">
                     ${speaker.socials.linkedin ? `<a href="${speaker.socials.linkedin}" target="_blank">LinkedIn</a>` : ''}
                     ${speaker.socials.twitter ? `<a href="${speaker.socials.twitter}" target="_blank">Twitter</a>` : ''}
-                    ${speaker.socials.company ? `<a href="${speaker.socials.company}" target="_blank">Company</a>` : ''}
+                    ${speaker.socials.website ? `<a href="${speaker.socials.website}" target="_blank">🌐 Website</a>` : ''}
                     ${speaker.socials.blog ? `<a href="${speaker.socials.blog}" target="_blank">Blog</a>` : ''}
                 </div>
             </div>
