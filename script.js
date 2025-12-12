@@ -342,7 +342,7 @@ function createSessionCard(session, speakers = []) {
         <span class="session-time">${session.time}</span>
         <h4>${session.title}</h4>
         <div class="session-meta">
-            ${session.level} | ${session.format}
+            ${[session.format, session.level].filter(Boolean).join(' | ')}
         </div>
         <div class="session-tags">
             ${session.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
