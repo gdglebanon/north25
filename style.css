@@ -153,6 +153,7 @@ img {
 .hero-content {
     max-width: 600px;
     z-index: 2;
+    position: relative;
 }
 
 .tagline {
@@ -449,12 +450,18 @@ img {
 }
 
 /* Speakers Placeholder */
-.speakers-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+/* Speakers Desktop Grid - overrides flexbox placeholder */
+@media (min-width: 769px) {
+    .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        justify-content: start;
+        /* Align correctly if grid */
+    }
 }
+
+/* Fallback/Mobile base styles if needed can go here, but mobile is handled by max-width query above */
 
 .speaker-card.placeholder {
     background: white;

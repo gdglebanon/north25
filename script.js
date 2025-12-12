@@ -570,10 +570,9 @@ function openSessionModal(session) {
         <div class="modal-body">
             <p>${session.description}</p>
             
-            <h4>Key Insights</h4>
-            <p>${session.keyInsights}</p>
+
             
-            <h4>Target Audience</h4>
+            <h4 style="margin-top: 20px;">Target Audience</h4>
             <p>${session.targetAudience}</p>
 
             ${speaker ? `
