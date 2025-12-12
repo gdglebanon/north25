@@ -445,6 +445,7 @@ img {
 .card h3 {
     margin-bottom: 15px;
     font-size: 1.5rem;
+    color: var(--google-blue);
 }
 
 /* Speakers Placeholder */

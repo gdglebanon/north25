@@ -118,6 +118,24 @@ const devFestData = {
         //     tags: ["Accessibility", "Web", "Inclusion"]
         // },
         {
+            id: "common-1",
+            title: "Registration & Welcome Coffee ☕",
+            description: "Check-in and get your badge and swag.",
+            format: "Networking",
+            isCommon: true,
+            time: "08:30 AM - 09:30 AM",
+            tags: []
+        },
+        {
+            id: "common-2",
+            title: "Keynote: GDG, BAU, H.E Minister Kamal Chehadi",
+            description: "Opening remarks and keynote address.",
+            format: "Keynote",
+            isCommon: true,
+            time: "09:30 AM - 10:30 AM",
+            tags: ["Keynote"]
+        },
+        {
             id: "break-1",
             title: "Coffee Break ☕",
             description: "Networking and refreshments.",
@@ -125,7 +143,7 @@ const devFestData = {
             isCommon: true,
             time: "10:40 AM - 11:00 AM",
             tags: []
-        },
+        }
     ],
     speakers: [
         // {
@@ -214,7 +232,10 @@ const devFestData = {
     ],
     schedule: {
         timeSlots: [
+            "08:30 AM - 09:30 AM",
+            "09:30 AM - 10:30 AM",
             "10:00 AM - 10:40 AM",
+            "10:40 AM - 11:00 AM"
             // "11:00 AM - 11:40 AM",
             // "01:00 PM - 01:40 PM",
             // "02:00 PM - 02:40 PM"
