@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDG North Lebanon DevFest 2025</title>
+    <meta name="description"
+        content="Join us on December 20th at Beirut Arab University, Tripoli Campus for DevFest North 2025.">
+
+    <!-- Google Fonts: Outfit (Alternative to Google Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="DevFest North Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#badge-generator">Get Badge</a></li>
+                <li><a href="https://rsvp.gdglebanon.com/" target="_blank" class="btn btn-primary">Register Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="tagline">GDG North Lebanon</span>
+                <h1>DevFest Tripoli 2025</h1>
+                <p class="date-location">
+                    <span class="icon">📅</span> December 20th, 2025 <br>
+                    <span class="icon">📍</span> Beirut Arab University, Tripoli Campus
+                </p>
+                <p class="description">
+                    A full-day conference packed with inspiring talks, hands-on workshops, thought-provoking panels, and
+                    stories that spark innovation.
+                </p>
+                <div class="cta-group">
+                    <a href="https://rsvp.gdglebanon.com/" target="_blank" class="btn btn-primary">Get Tickets</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- We can use a generated image or a placeholder here if needed, 
+                     but for now I'll use a CSS shape or the logo again in a creative way -->
+                <div class="hero-shape"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About DevFest</h2>
+                <p>DevFests are community-led developer events hosted by Google Developer Groups around the globe.</p>
+            </div>
+            <div class="about-content">
+                <div class="card">
+                    <h3>20+ Speakers</h3>
+                    <p>Leading local and international experts, including Google Developer Experts.</p>
+                </div>
+                <div class="card">
+                    <h3>Workshops</h3>
+                    <p>Hands-on sessions to learn new technologies and skills.</p>
+                </div>
+                <div class="card">
+                    <h3>Networking</h3>
+                    <p>Connect with fellow developers and industry leaders.</p>
+                </div>
+                <div class="card">
+                    <h3>Swag & Giveaways</h3>
+                    <p>Win cool prizes and get exclusive DevFest merchandise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agenda</h2>
+                <p>Explore our sessions across 4 auditoriums.</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="agenda-search-container">
+                <input type="text" id="agendaSearch" placeholder="Search sessions, speakers, or topics..."
+                    class="agenda-search-input">
+            </div>
+
+            <!-- Agenda Controls -->
+            <div class="agenda-container">
+                <!-- Desktop/Tablet Track View -->
+                <div id="agenda-tracks" class="agenda-tracks">
+                    <!-- Tracks (Columns) will be injected here by JS -->
+                </div>
+
+                <!-- Mobile List View -->
+                <div id="mobile-agenda" class="mobile-agenda">
+                    <div id="happening-now-container" class="happening-now-section" style="display: none;">
+                        <h3 class="mobile-section-title">Happening Now 🔥</h3>
+                        <div id="happening-now-grid" class="mobile-grid"></div>
+                    </div>
+
+                    <div id="upcoming-container" class="upcoming-section">
+                        <h3 class="mobile-section-title">Schedule</h3>
+                        <div id="mobile-agenda-grid" class="mobile-grid"></div>
+                    </div>
+
+                    <div id="previous-sessions-container" class="previous-section" style="display: none;">
+                        <button id="show-previous-btn" class="btn btn-secondary full-width">See Previous
+                            Sessions</button>
+                        <div id="previous-sessions-grid" class="mobile-grid hidden-sessions"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section (Updated) -->
+    <section id="speakers" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Speakers</h2>
+                <p>Meet the experts shaping the future of tech.</p>
+            </div>
+            <div id="speakers-grid" class="speakers-grid">
+                <!-- Speakers will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section id="sponsors" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Sponsors</h2>
+                <p>A big thank you to our amazing partners.</p>
+            </div>
+            <div class="sponsors-grid">
+                <!-- Add sponsor logos here later -->
+                <p>Sponsorship opportunities available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Networking, Sponsors Expo & Fair -->
+    <section id="expo" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Networking, Sponsors Expo & Fair</h2>
+                <p>Connect, collaborate, and explore opportunities.</p>
+            </div>
+            <div class="expo-grid">
+                <div class="card">
+                    <h3>Networking Area</h3>
+                    <p>Dedicated space to meet fellow developers and speakers.</p>
+                </div>
+                <div class="card">
+                    <h3>Sponsors Expo</h3>
+                    <p>Visit booths from top tech companies and startups.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Fair</h3>
+                    <p>Discover local tech communities and initiatives.</p>
+                </div>
+                <div class="card">
+                    <h3>Career Corner</h3>
+                    <p>Explore job openings and career advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badge Generator Section -->
+    <section id="badge-generator" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Badge Generator</h2>
+                <p>Customize your DevFest badge and share it with the world!</p>
+            </div>
+            <div class="badge-container">
+                <div class="badge-controls">
+                    <h3>Customize Your Badge</h3>
+                    <p>Fill in your details and upload a photo.</p>
+
+                    <div class="form-group">
+                        <label for="photoUpload" class="file-upload-btn btn btn-secondary">
+                            <span class="icon">📷</span> <span id="file-chosen-text">Upload Your Photo</span>
+                        </label>
+                        <input type="file" id="photoUpload" accept="image/*" class="hidden">
+                        <p id="dragHint" class="hint hidden">Click and drag photo in preview to reposition.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="First Name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Last Name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title (Optional)</label>
+                        <input type="text" id="title" placeholder="Title" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company (Optional)</label>
+                        <input type="text" id="company" placeholder="Company" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">X/SM @username (Optional)</label>
+                        <input type="text" id="username" placeholder="@username" class="form-input">
+                    </div>
+
+                    <button id="downloadButton" class="btn btn-primary full-width">Download Your Badge</button>
+                </div>
+
+                <div class="badge-preview">
+                    <canvas id="badgeCanvas" width="1080" height="1080"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="GDG Logo">
+                    <p>GDG North Lebanon</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Code of Conduct</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 GDG North Lebanon. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Session Modal -->
+    <div id="session-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="session-modal-body">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Speaker Modal -->
+    <div id="speaker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="speaker-modal-body">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsor Modal -->
+    <div id="sponsor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="sponsor-modal-body">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
