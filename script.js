@@ -189,7 +189,12 @@ function renderAgenda(container, data) {
                 trackHeader.textContent = room;
                 trackCol.appendChild(trackHeader);
 
-                const roomSessions = chunk.sessions.filter(s => s.room === room);
+                const roomSessions = chunk.sessions.filter(s => {
+                    if (room === 'Workshops Auditorium') {
+                        return s.room === 'B112' || s.room === 'B108' || s.room === 'Workshops Auditorium';
+                    }
+                    return s.room === room;
+                });
 
                 roomSessions.forEach(session => {
                     let sessionSpeakers = [];

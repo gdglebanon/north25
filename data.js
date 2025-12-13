@@ -53,7 +53,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>-  Integrate LLM's and build intelligent features <br/>- Implement RAG pipeline<br/>- Empower LLM with Memory <br/>- Extend LLM capabilities with tools access<br/>- Monitor application using observability stack<br/><br/>Learn how to bring generative AI capabilities into your java based application using spring AI without the need for python expertise",
             "format": "Talk",
             "level": "Beginner",
-            "room": "B1005",
+            "room": "B105",
             "time": "10:30 AM - 11:10 AM",
             "tags": [],
             "isCommon": false,
@@ -122,7 +122,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>How multimodal intelligence works under the hood.<br/><br/>Practical constraints when moving GPT-level multimodality to devices.<br/><br/>Engineering tricks to reduce model size dramatically.<br/><br/>What hybrid on-device/cloud architectures look like.<br/><br/>Privacy, cost, and performance benefits of local AI.<br/><br/>This talk explores whether the next generation of multimodal assistants, capable of vision, speech, and language reasoning, can run locally on consumer hardware.<br/>We\u2019ll cover lightweight visual encoders, adapter-based multimodal fusion, 4-bit and 2-bit quantization, memory optimizations, and device-level acceleration.<br/>Includes a live demo of a local multimodal assistant running on small hardware.",
             "format": "Talk",
             "level": "Beginner",
-            "room": "B1005",
+            "room": "B105",
             "time": "11:10 AM - 11:50 AM",
             "tags": [],
             "isCommon": false,
@@ -191,7 +191,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>How top submissions approached common challenges in innovative ways<br/>Emerging patterns in open source tooling and collaboration models<br/>Key technical decisions that differentiated winning entries<br/>Actionable lessons for teams building open source projects<br/>What the competition revealed about current developer priorities and pain points<br/><br/>Join us for a comprehensive review of our Open Source Competition, where we'll share winner highlights, analyze standout submissions, and discuss emerging trends that shaped the entries. We'll explore what worked, what surprised us, and how these innovations are pushing the boundaries of open source development.",
             "format": "Talk",
             "level": "Beginner",
-            "room": "B1005",
+            "room": "B105",
             "time": "11:50 AM - 12:30 PM",
             "tags": [],
             "isCommon": false,
@@ -264,7 +264,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>Why Explainability Matters<br/>2. Black-box vs Interpretable Models<br/>3. Local vs Global Explanations<br/>4. Popular XAI Techniques & Tools<br/>5. Human-Centered AI Design<br/>6. Real-World Applications<br/>7. Limitations & Open Challenges<br/>8. The Future of XAI<br/><br/>This session introduces participants to the rapidly growing field of explainable AI , advantages challenges and real applications.",
             "format": "Talk",
             "level": "Intermediate",
-            "room": "B1005",
+            "room": "B105",
             "time": "12:50 PM - 01:25 PM",
             "tags": [],
             "isCommon": false,
@@ -363,7 +363,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>- what you need to prepare for behavioral interviews in the global market<br/>- what you need to prepare on the technical side<br/>- what differentiates startups from big tech <br/>- the difference from applying to local jobs<br/><br/>I will talk about how I prepared for a global job in tech. I will also discuss how to prepare differently for big tech and startups. ",
             "format": "Talk",
             "level": "Beginner",
-            "room": "B1005",
+            "room": "B105",
             "time": "01:25 PM - 02:00 PM",
             "tags": [],
             "isCommon": false,
@@ -420,7 +420,7 @@ const devFestData = {
             "description": "<strong>Key Insights:</strong><br/>Talk Key Insights: Attendees will learn how to design resilient cloud systems, avoid vendor lock-in, and implement proactive monitoring and backup strategies. This addresses the urgent need for secure, scalable infrastructure in today\u2019s hybrid environments.<br/><br/> A practical talk on building secure, scalable cloud environments using Zabbix, Acronis, and Nextcloud. Covers monitoring, disaster recovery, vendor independence, and real-world deployment insights",
             "format": "Talk",
             "level": "Intermediate",
-            "room": "B1005",
+            "room": "B105",
             "time": "02:00 PM - 02:35 PM",
             "tags": [],
             "isCommon": false,
@@ -822,7 +822,7 @@ const devFestData = {
             "tagLine": "Co-founder - IT Consultant",
             "company": "Netwatch",
             "bio": "Mohamad \u2013 Strategic IT Consultant, Netwatch  \nMohamad is a Strategic IT Consultant specializing in cloud computing, MSP solutions, and digital transformation. He advises hospitals, universities, and enterprises on building secure, scalable, and vendor\u2011independent infrastructures. At DevFest, he bridges technical depth with practical impact, showcasing real\u2011world tools like Zabbix, Acronis, and Nextcloud alongside Google services to empower developers, students, and institutions.",
-            "profilePicture": "https://sessionize.com/image/9707-400o400o1-9pDgCXeZt5G5XrJak3XNcp.jpg",
+            "profilePicture": "https://sessionize.com/image/2e02-200o200o2-PxH3w2BXWdXq5WFK9mM1QF.jpg",
             "socials": {
                 "linkedin": "https://www.linkedin.com/in/mohamad-tabikh-a907b329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 "website": "www.netwatchlb.com"
@@ -920,9 +920,9 @@ const devFestData = {
         ],
         "auditoriums": [
             "Main Auditorium",
-            "B1005",
+            "B105",
             "B110",
-            "B112"
+            "Workshops Auditorium"
         ]
     },
     sponsors: [
