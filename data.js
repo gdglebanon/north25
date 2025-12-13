@@ -927,71 +927,115 @@ const devFestData = {
     },
     sponsors: [
         {
-            name: "Semicolon",
-            logo: "assets/images/logo.png", // Placeholder
+            name: "Semicolon Security",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/semsec-logo_Mkjxdc3.png",
             tier: "Gold",
-            url: "#",
-            description: "Semicolon is a leading software development company...",
+            url: "https://semsec.org/home/",
+            description: "A Lebanese cybersecurity company and training academy focused on ethical hacking, security workshops, penetration testing services and educational programs.",
             socials: {
-                linkedin: "#",
-                website: "#"
+                website: "https://semsec.org/home/"
             }
         },
-        // {
-        //     name: "Murex",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Silver",
-        //     url: "#",
-        //     description: "Murex provides enterprise-wide, cross-asset financial technology solutions...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
-        // {
-        //     name: "Speedlane",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Silver",
-        //     url: "#",
-        //     description: "Speedlane is a tech accelerator...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
-        // {
-        //     name: "Supportful",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Bronze",
-        //     url: "#",
-        //     description: "Supportful is a support services company...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
-        // {
-        //     name: "Monty Holding",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Bronze",
-        //     url: "#",
-        //     description: "Monty Holding offers telecom solutions...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
-        // {
-        //     name: "KDD",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Bronze",
-        //     url: "#",
-        //     description: "KDD is a leading food and beverage company...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
+        {
+            name: "DAS360",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/DAS360_onDF0iW.png",
+            tier: "Gold",
+            url: "https://das-360.net/",
+            description: "Delivering 360\u00B0\nDAS 360 is a driven and data-focused digital marketing firm that specializes in crafting comprehensive online solutions to enhance the visibility and success of companies in GCC.",
+            socials: {
+                website: "https://das-360.net/"
+            }
+        },
+        {
+            name: "AIY Experts Solutions",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Photo%2520from%2520%2540bed%2520%25283%2529-Photoroom_59T0KnY.png",
+            tier: "Silver",
+            url: "https://www.aiyexpertsolutions.com/",
+            description: "AIY Expert Solutions is a 40+ member company with a vision to continuously gather talent, knowledge, and expertise to build a leading enterprise in various markets.\nThis talent, combined with expert-level practices, helped us create a specialized software that dominates the billion-dollar reselling industry and is used by tens of thousands of clients.\nIt’s been featured on CNBC, Yahoo Finance, Vice, The Globe, Forbes, and The Mail.",
+            socials: {
+                website: "https://www.aiyexpertsolutions.com/"
+            }
+        },
+        {
+            name: "Khwarizme",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Logo%2520-%2520Khwarizme%2520%25281%2529-Photoroom_PCz8iEh.png",
+            tier: "Bronze",
+            url: "https://www.khwarizme.com/",
+            description: "At Khwarizme LB, we believe in the power of knowledge, innovation, and community.\n\nOur mission is to empower youth and entrepreneurs through education and hands-on experiences.\n\nFrom training programs and workshops to venture building and mentorship, we create real opportunities.\n\nWe connect students, startups, and professionals to resources that help them grow and thrive.\n\nRooted in Lebanon yet open to the world, we aim to build solutions with lasting impact.",
+            socials: {
+                website: "https://www.khwarizme.com/"
+            }
+        },
+        {
+            name: "NavyBits",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/navyBits_logo_final_2048_QPkBhgA.png",
+            tier: "Bronze",
+            url: "https://www.navybits.com/",
+            description: "At NavyBits, our mission goes beyond delivering technology, we are here to empower businesses, strengthen communities, and bring happiness to families. We believe that innovation should be simple, effective, and accessible to everyone.\nBy providing tools that streamline operations and drive growth, we help our clients achieve success while creating a positive impact that extends far beyond their businesses. Together, we\u2019re building a future where technology is the foundation of stronger, happier",
+            socials: {
+                website: "https://www.navybits.com/"
+            }
+        },
+        {
+            name: "Career Lab Avio",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/careerLAB_white-modified_60sZtTa.png",
+            tier: "Bronze",
+            url: "https://www.careerlab.space/",
+            description: "Experiment. Learn. Evolve. Level Up Your Career with Career Lab\n\nWhether you're just starting out, growing your career, or running a business. Career Lab helps you master the software, skills, and strategies to stay ahead in today\u2019s fast-changing world",
+            socials: {
+                website: "https://www.careerlab.space/"
+            }
+        },
+        {
+            name: "Netwatch",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Netwatch-Logo_I7QlxVv.png",
+            tier: "Bronze",
+            url: "https://www.linkedin.com/company/netwatch-lb/about/",
+            description: "NETWATCH is an IT Company was founded in 2007 in Tripoli, Lebanon, with over ten years of cumulative experience from its founding partners. The company is known for providing high-quality technical support services to businesses, as well as selling computers, laptops, accessories, surveillance systems, server systems, and cloud computing services. NETWATCH Technology always strives to meet the needs of its customers and achieve their complete satisfaction.\n\nThe company operates in four main area",
+            socials: {
+                linkedin: "https://www.linkedin.com/company/netwatch-lb/about/"
+            }
+        },
+        {
+            name: "Space Technology",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/space%2520technology%2520logo%2520%25281%2529-Photoroom_fZQh7Go.png",
+            tier: "Bronze",
+            url: "https://www.facebook.com/p/Space-Technology-100063717213064/",
+            description: "Sales and maintenance of all computers and laptops, based in Tripoli",
+            socials: {
+                website: "https://www.facebook.com/p/Space-Technology-100063717213064/"
+            }
+        },
+        {
+            name: "Energy Plus",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Energy%2520Drink%2520Logo%2520%25282%2529_hyBfsvW.png",
+            tier: "Bronze",
+            url: "https://www.instagram.com/energypluslb/?hl=en",
+            description: "Lebanese Energy drink, Naturally Powered by Guarana",
+            socials: {
+                website: "https://www.instagram.com/energypluslb/?hl=en"
+            }
+        },
+        {
+            name: "Qabassat Computers",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/QabassatComputers_LRRTlLU.png",
+            tier: "Bronze",
+            url: "https://qabassat.computer/",
+            description: "Qabassat is an online shopping platform offering computers, electronics, gadgets, toys, home and stationary accessories.",
+            socials: {
+                website: "https://qabassat.computer/"
+            }
+        },
+        {
+            name: "NIC Group (Network and IT Consultancy)",
+            logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/NIC-Photoroom_H2Lku2o.png",
+            tier: "Bronze",
+            url: "https://nicgroup.co",
+            description: "NIC Group (Network and IT Consultancy) \n\nNIC Group is a leading IT consultancy firm specializing in network and IT services, including cybersecurity, network management, and IT infrastructure. Our expert developer teams can create any app, website, or solution tailored to your needs. With a focus on keeping your business connected, secure, and efficient, we deliver reliable, scalable, and secure IT solutions to help you achieve your business goals.",
+            socials: {
+                website: "https://nicgroup.co"
+            }
+        },
         {
             name: "Beirut Arab University",
             logo: "https://alefliban.org/wp-content/uploads/2015/02/BAU.gif",
@@ -1013,29 +1057,7 @@ const devFestData = {
                 linkedin: "#",
                 website: "https://developers.google.com"
             }
-        },
-        // {
-        //     name: "DX Talks",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Media Partner",
-        //     url: "#",
-        //     description: "DX Talks is a digital transformation platform...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // },
-        // {
-        //     name: "Network with Jean",
-        //     logo: "assets/images/logo.png", // Placeholder
-        //     tier: "Media Partner",
-        //     url: "#",
-        //     description: "Network with Jean is a networking community...",
-        //     socials: {
-        //         linkedin: "#",
-        //         website: "#"
-        //     }
-        // }
+        }
     ]
 };
 

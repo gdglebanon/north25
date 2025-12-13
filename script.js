@@ -422,10 +422,28 @@ function renderSponsors(container, sponsors) {
     const sponsoredBy = sponsors.filter(s => ['Gold', 'Silver', 'Bronze'].includes(s.tier));
     const partners = sponsors.filter(s => !['Gold', 'Silver', 'Bronze'].includes(s.tier));
 
-    // 1. Sponsored By Section
+    // 1. Partners & Supporters Section (Moved up)
+    if (partners.length > 0) {
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'sponsor-section-title';
+        sectionTitle.textContent = 'Partners & Supporters';
+        container.appendChild(sectionTitle);
+
+        const grid = document.createElement('div');
+        grid.className = 'sponsors-grid';
+
+        partners.forEach(sponsor => {
+            const card = createSponsorCard(sponsor);
+            grid.appendChild(card);
+        });
+        container.appendChild(grid);
+    }
+
+    // 2. Sponsored By Section
     if (sponsoredBy.length > 0) {
         const sectionTitle = document.createElement('h3');
         sectionTitle.className = 'sponsor-section-title';
+        if (partners.length > 0) sectionTitle.style.marginTop = '40px';
         sectionTitle.textContent = 'Sponsored By';
         container.appendChild(sectionTitle);
 
@@ -433,29 +451,6 @@ function renderSponsors(container, sponsors) {
         grid.className = 'sponsors-grid';
 
         sponsoredBy.forEach(sponsor => {
-            const card = createSponsorCard(sponsor);
-            grid.appendChild(card);
-        });
-        container.appendChild(grid);
-    }
-
-    // 2. Partners & Supporters Section
-    if (partners.length > 0) {
-        const sectionTitle = document.createElement('h3');
-        sectionTitle.className = 'sponsor-section-title';
-        // You can customize this title based on specific needs, or just "Partners & Supporters"
-        // Based on image: "Main Supporters" and "Partners" seem separate but user asked for max 2 sections.
-        // Let's use generic "Partners & Supporters" or just split visual headers inside if we want more granularity
-        // efficiently. User said "max two sections".
-        // Let's try to group them nicely.
-        sectionTitle.textContent = 'Partners & Supporters';
-        sectionTitle.style.marginTop = '40px';
-        container.appendChild(sectionTitle);
-
-        const grid = document.createElement('div');
-        grid.className = 'sponsors-grid';
-
-        partners.forEach(sponsor => {
             const card = createSponsorCard(sponsor);
             grid.appendChild(card);
         });
