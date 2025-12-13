@@ -405,6 +405,7 @@ function renderSpeakers(container, speakers) {
                 <img src="${speaker.profilePicture}" alt="${speaker.fullName}" onerror="this.src='assets/images/logo.png'">
             </div>
             <h3>${speaker.fullName}</h3>
+            <p style="color: var(--google-blue); font-size: 0.9rem; font-weight: bold; margin-bottom: 5px;">${speaker.company || ''}</p>
             <p>${speaker.tagLine}</p>
         `;
         card.addEventListener('click', () => openSpeakerModal(speaker));
