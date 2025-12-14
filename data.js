@@ -977,7 +977,7 @@ const devFestData = {
             }
         },
         {
-            name: "Career Lab Avio",
+            name: "Career Lab (Aveo)",
             logo: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/careerLAB_white-modified_60sZtTa.png",
             tier: "Bronze",
             url: "https://www.careerlab.space/",
