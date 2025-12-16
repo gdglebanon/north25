@@ -75,8 +75,18 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- We can use a generated image or a placeholder here if needed, 
-                     but for now I'll use a CSS shape or the logo again in a creative way -->
+                <div class="hero-map-card">
+                    <h3>Join us in Tripoli</h3>
+                    <p>Beirut Arab University, Tripoli Campus</p>
+                    <div class="hero-map-frame">
+                        <iframe
+                            src="https://www.google.com/maps?q=Beirut+Arab+University,+Tripoli+Campus&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Map showing Beirut Arab University, Tripoli Campus">
+                        </iframe>
+                    </div>
+                </div>
                 <div class="hero-shape"></div>
             </div>
         </div>
@@ -224,7 +234,7 @@
 
                     <div class="form-group">
                         <label for="photoUpload" class="file-upload-btn btn btn-secondary">
-                            <span class="icon">📷</span> <span id="file-chosen-text">Upload Your Photo</span>
+                            <span class="camera-icon" aria-hidden="true"></span><span id="file-chosen-text">Upload Your Photo</span>
                         </label>
                         <input type="file" id="photoUpload" accept="image/*" class="hidden">
                         <p id="dragHint" class="hint hidden">Click and drag photo in preview to reposition.</p>
