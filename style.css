@@ -107,7 +107,7 @@ img {
 }
 
 .logo img {
-    height: 40px;
+    height: 56px;
 }
 
 .nav-links {
@@ -122,7 +122,7 @@ img {
 }
 
 .nav-links a:hover {
-    color: var(--google-blue);
+    color: var(--google-green);
 }
 
 .hamburger {
