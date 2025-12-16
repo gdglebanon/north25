@@ -125,6 +125,16 @@ img {
     color: var(--google-green);
 }
 
+.navbar .btn-primary {
+    background-color: var(--google-green);
+    color: #ffffff;
+}
+
+.navbar .btn-primary:hover {
+    background-color: #2e7d32;
+    box-shadow: 0 4px 6px rgba(46, 125, 50, 0.3);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -154,6 +164,50 @@ img {
     max-width: 600px;
     z-index: 2;
     position: relative;
+}
+
+.hero-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(66, 133, 244, 0.08);
+    border: 1px solid rgba(66, 133, 244, 0.25);
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    backdrop-filter: blur(6px);
+}
+
+.hero-badge-pill span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.hero-badge-pill .pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--google-green);
+    box-shadow: 0 0 0 6px rgba(52, 168, 83, 0.25);
+}
+
+.hero-badge-pill .pill-label {
+    font-weight: 600;
+    color: var(--google-blue);
+}
+
+.hero-badge-pill .pill-link {
+    margin-left: 6px;
+    font-weight: 500;
+    color: var(--google-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.hero-badge-pill .pill-link:hover {
+    color: var(--google-green);
 }
 
 .tagline {
