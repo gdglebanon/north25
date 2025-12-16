@@ -387,13 +387,8 @@ const devFestData = {
             "tags": [],
             "isCommon": false,
             "targetAudience": "University students and Professionals ",
-            "speakerId": "261c2a2a-88cf-4821-b3a9-f5003eb66216",
-            "speakers": [
-                {
-                    "id": "261c2a2a-88cf-4821-b3a9-f5003eb66216",
-                    "name": "Sarah Rashidi"
-                }
-            ]
+            "speakerId": "",
+            "speakers": []
         },
         {
             "id": "935eac29-dbdb-4504-982c-06fd6aa26559",
@@ -787,20 +782,6 @@ const devFestData = {
             }
         },
         {
-            "id": "261c2a2a-88cf-4821-b3a9-f5003eb66216",
-            "firstName": "Sarah",
-            "lastName": "Rashidi",
-            "fullName": "Sarah Rashidi",
-            "tagLine": "AI Architect & Researcher | University Instructor | Community Builder",
-            "company": "RHU",
-            "bio": "Sarah is a University Instructor at Rafik Hariri University (RHU), where she teaches computer science and helps students bridge theory with practical applications. She is also an AI Researcher, Engineer, and Architect with over three years of experience building scalable AI systems, with a focus on MLOps, generative AI, and applied machine learning. Holding dual master\u2019s degrees in Computer Science and Data Intelligence, she works at the intersection of research and engineering to design solutions that connect innovation with real-world impact.\n\nBeyond her professional work, Sarah is an active community leader. She joined Google Developer Groups (GDG) as an organizer earlier this year and is the founder of Code with Serah, a STEAM community at the crossroads of technology and creativity. Through these initiatives, she creates inclusive spaces for young people to learn, collaborate, and bring their ideas to life.\n\n",
-            "profilePicture": "https://sessionize.com/image/37fc-400o400o1-Hso6XV5NdmPJWaaMUZQvTd.png",
-            "socials": {
-                "linkedin": "linkedin.com/in/serahrashidi/",
-                "website": "https://www.rhu.edu.lb/home"
-            }
-        },
-        {
             "id": "cc489475-0a10-4c0b-8e6d-9878e83c84d8",
             "firstName": "Rayan",
             "lastName": "Salhab",
@@ -1060,4 +1041,3 @@ const devFestData = {
         }
     ]
 };
-
