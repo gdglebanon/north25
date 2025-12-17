@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Dynamic Content Rendering ---
 
+    // Agenda rendering logic disabled (replaced with link)
+    /*
     // Render Agenda
     const agendaTracks = document.getElementById('agenda-tracks');
     if (agendaTracks && typeof devFestData !== 'undefined') {
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileAgendaContainer && typeof devFestData !== 'undefined') {
         renderMobileAgenda(devFestData.sessions, devFestData.speakers);
     }
+    */
 
     // Render Speakers
     const speakersGrid = document.getElementById('speakers-grid');
@@ -61,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupModals();
 
     // --- Search Logic ---
+    /*
     const searchInput = document.getElementById('agendaSearch');
     if (searchInput && typeof devFestData !== 'undefined') {
         searchInput.addEventListener('input', (e) => {
@@ -68,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filterSessions(searchTerm);
         });
     }
+    */
 
     // Optional: Scroll reveal (respects reduced motion)
     const revealElements = document.querySelectorAll('.reveal-up');
