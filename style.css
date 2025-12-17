@@ -515,18 +515,17 @@ img {
 }
 
 .event-visual-card {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
 }
 
 .event-visual-card img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 .card {
