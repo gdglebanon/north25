@@ -97,8 +97,12 @@ img {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
     padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .navbar .container {
@@ -590,22 +594,24 @@ html[data-js="true"] .reveal-up.is-visible {
 }
 
 .sponsor-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
     padding: 30px 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     min-height: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .sponsor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .sponsor-logo-wrapper {
@@ -669,26 +675,14 @@ html[data-js="true"] .reveal-up.is-visible {
     background-color: #5f6368;
 }
 
-/* Border Colors for Cards (Optional aesthetic touch) */
-.sponsor-card.gold {
-    border-top: 4px solid #f4b400;
-}
-
-.sponsor-card.silver {
-    border-top: 4px solid #9aa0a6;
-}
-
-.sponsor-card.bronze {
-    border-top: 4px solid #ce8a78;
-}
-
+/* Removing colored border overrides for smooth glass look */
+.sponsor-card.gold,
+.sponsor-card.silver,
+.sponsor-card.bronze,
 .sponsor-card.host,
-.sponsor-card.main-supporter {
-    border-top: 4px solid #34a853;
-}
-
+.sponsor-card.main-supporter,
 .sponsor-card.media-partner {
-    border-top: 4px solid #4285f4;
+    border-top: none;
 }
 
 @media (max-width: 768px) {
@@ -1035,8 +1029,8 @@ html[data-js="true"] .reveal-up.is-visible {
 
 .agenda-search-input:focus {
     outline: none;
-    border-color: var(--google-blue);
-    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15);
+    border-color: var(--google-green);
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.15);
 }
 
 /* Agenda Section - Track Layout */
@@ -1081,7 +1075,7 @@ html[data-js="true"] .reveal-up.is-visible {
     padding: 20px;
     margin: 20px 0;
     text-align: center;
-    border-left: 5px solid var(--google-blue);
+    border-left: 5px solid var(--google-green);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1091,7 +1085,7 @@ html[data-js="true"] .reveal-up.is-visible {
 
 .common-session .time {
     font-weight: 700;
-    color: var(--google-blue);
+    color: var(--google-green);
     font-size: 1.1rem;
     background: white;
     padding: 5px 15px;
@@ -1129,10 +1123,10 @@ html[data-js="true"] .reveal-up.is-visible {
 
 .track-header {
     font-weight: 700;
-    color: var(--google-blue);
+    color: var(--google-green);
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(66, 133, 244, 0.1);
+    border-bottom: 2px solid rgba(52, 168, 83, 0.1);
     margin-bottom: 5px;
     font-size: 1.1rem;
 }
@@ -1141,7 +1135,7 @@ html[data-js="true"] .reveal-up.is-visible {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    border-left: 4px solid var(--google-blue);
+    border-left: 4px solid var(--google-green);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1323,16 +1317,18 @@ html[data-js="true"] .reveal-up.is-visible {
 .speaker-card {
     background: white;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 24px;
     text-align: center;
     width: 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .speaker-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .speaker-card .avatar img {
