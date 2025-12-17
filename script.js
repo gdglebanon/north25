@@ -56,6 +56,51 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSponsors(sponsorsContainer, devFestData.sponsors);
     }
 
+    // Render FAQ
+    const faqData = [
+        {
+            "question": "What is DevFest?",
+            "answer": "DevFest is an annual decentralized tech conference hosted by the Google Developer Groups (GDG) community. GDGs host these events around the globe. It brings developers together to learn about the latest Google technologies, explore how to leverage them for social and economic impact, and connect with like-minded innovators. Since its launch more than a decade ago, DevFest has grown into a global movement that empowers developers to collaborate, upskill, and build solutions that matter."
+        },
+        {
+            "question": "What is DevFest in Lebanon?",
+            "answer": "In Lebanon, DevFest has been held since 2017, with recent editions taking place in both Beirut and Tripoli. DevFest Beirut is proudly organized by GDG Coast Lebanon, and DevFest Tripoli is proudly organized by GDG North Lebanon. The 2023 edition of DevFest Tripoli received over 1,000 applications, with more than 400 attendees joining the experience. For 2025, we’re scaling up again and aiming to welcome 1,000 developers, students, and tech enthusiasts from across Lebanon to connect, learn, and build together."
+        },
+        {
+            "question": "What is Google Developer Groups (GDG)?",
+            "answer": "Google Developer Groups (GDG) is the largest developer community in the world. Over 1000+ GDGs exist in 140+ countries around the globe. The program helps developers connect with one another and learn about building products on all Google platforms.<br><br>Each GDG is a local community hub of professional developers who share expertise and passion for Google's developer technology.<br><br>GDG communities coordinate community activities centered around helping developers learn, connect, and grow while building a strong sense of belonging to the local and global Google Developer Groups community."
+        },
+        {
+            "question": "What is Google Developer Groups (GDG) in Lebanon?",
+            "answer": "Lebanon is home to two active Google Developer Groups: <strong>GDG Coast Lebanon</strong> and <strong>GDG North Lebanon</strong>.</p><ul><li><strong>GDG Coast Lebanon</strong>: Founded in <strong>2017</strong>, it is based along the coastal region and organizes events in Beirut, Saida, and Byblos. The group is known for hosting flagship events like <strong>DevFest Beirut</strong> and <strong>Build with AI</strong>, and for creating inclusive spaces where developers, students, and tech enthusiasts can learn and collaborate.</li><li><strong>GDG North Lebanon</strong>: Founded in <strong>2019</strong>, it is based in Tripoli and serves the northern region with workshops, study jams, and community events. The group also organizes <strong>DevFest Tripoli</strong>, connecting northern developers with the wider global GDG network.</li></ul><p><br>Together, these communities strengthen Lebanon’s developer ecosystem while linking it to the world’s largest tech community."
+        },
+        {
+            "question": "How can I become a member of Google Developer Group?",
+            "answer": "You can join <a href='https://gdg.community.dev/gdg-coast-lebanon'> GDG Coast Lebanon </a> and <a href='https://gdg.community.dev/gdg-north-lebanon'> GDG North Lebanon </a> by signing up through the official GDG platform. Once you join, you’ll be able to RSVP to events, connect with fellow developers, and stay updated on upcoming activities."
+        },
+        {
+            "question": "What technologies might I use at a DevFest?",
+            "answer": "At DevFest, you’ll explore the latest technologies shaping the future of development. You will learn more about the latest in Web, Mobile, Cloud, AI, and Firebase and hands-on with tools including Angular, Flutter and Google Cloud."
+        },
+        {
+            "question": "How can I join the workshops?",
+            "answer": "Workshop seats are limited. Make sure you arrive the workshop session on time and bring your laptop."
+        },
+        {
+            "question": "Can you accommodate my dietary requirements?",
+            "answer": "Please indicate any specific dietary needs on the registration form. For any questions, please don't hesitate to reach out to us at <a href='mailto:info@gdglebanon.com'>info@gdglebanon.com</a>.<br><br>Please note that all meat served at this event will be halal."
+        },
+        {
+            "question": "I have other questions. How can I contact you?",
+            "answer": "Reach out to us at <a href='mailto:info@gdglebanon.com'>info@gdglebanon.com</a>."
+        }
+    ];
+
+    const faqGrid = document.getElementById('faq-grid');
+    if (faqGrid) {
+        renderFAQ(faqGrid, faqData);
+    }
+
 
     // Modal Logic
     setupModals();
@@ -186,7 +231,11 @@ function renderAgenda(container, data) {
     chunks.forEach(chunk => {
         if (chunk.type === 'common') {
             const commonEl = document.createElement('div');
-            commonEl.className = 'common-session';
+            commonEl.className = 'common-session animate-stagger'; // Add animation class
+            // Calculate delay based on existing children count to stagger nicely
+            const delay = container.children.length * 100;
+            commonEl.style.animationDelay = `${delay}ms`;
+
             commonEl.innerHTML = `
                 <span class="time">${chunk.session.time}</span>
                 <h3>${chunk.session.title}</h3>
@@ -231,6 +280,15 @@ function renderAgenda(container, data) {
                     }
 
                     const sessionCard = createSessionCard(session, sessionSpeakers);
+
+                    // Add animation
+                    sessionCard.classList.add('animate-stagger');
+                    // Delay based on room index + session index to ripple across/down
+                    // Using a simpler global counter or based on container children doesn't work well for nested.
+                    // Let's use a random small variance or just index in loop.
+                    const delay = (container.children.length * 100) + (Math.random() * 200);
+                    sessionCard.style.animationDelay = `${delay}ms`;
+
                     sessionCard.addEventListener('click', () => openSessionModal(session));
                     trackCol.appendChild(sessionCard);
                 });
@@ -419,6 +477,19 @@ function getSessionTimes(timeStr, dateStr) {
         start: parseDate(startStr),
         end: parseDate(endStr)
     };
+}
+
+function renderFAQ(container, data) {
+    container.innerHTML = '';
+    data.forEach((item) => {
+        const details = document.createElement('details');
+        details.className = 'faq-item';
+        details.innerHTML = `
+            <summary class="faq-summary">${item.question}</summary>
+            <div class="faq-answer">${item.answer}</div>
+        `;
+        container.appendChild(details);
+    });
 }
 
 function renderSpeakers(container, speakers) {
@@ -797,7 +868,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Handle Photo Load
     userPhoto.onload = () => {
         const imgAspectRatio = userPhoto.width / userPhoto.height;
         const targetAspectRatio = targetRect.width / targetRect.height;
