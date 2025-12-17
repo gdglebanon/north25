@@ -200,7 +200,7 @@ img {
 .hero-image--tripoli img {
     opacity: 0.32;
     object-fit: contain;
-    transform: translateY(44px) scale(1.12);
+    transform: translateY(120px) scale(1.12);
     transform-origin: right bottom;
 }
 
@@ -212,7 +212,7 @@ img {
     }
 
     .hero-image--tripoli img {
-        transform: translateY(36px) scale(1.1);
+        transform: translateY(110px) scale(1.1);
     }
 }
 
@@ -697,7 +697,7 @@ img {
         width: auto;
         max-width: none;
         opacity: 0.38;
-        transform: translateY(10px) scale(1.06);
+        transform: translateY(80px) scale(1.06);
         transform-origin: center bottom;
     }
 
@@ -705,6 +705,7 @@ img {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
+        margin-top: 48px;
         justify-content: center;
     }
 
