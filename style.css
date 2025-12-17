@@ -189,16 +189,31 @@ img {
 }
 
 .hero-image--tripoli {
-    max-width: 940px;
+    width: clamp(820px, 62vw, 1240px);
     justify-self: end;
     align-self: end;
-    margin-right: -48px;
+    max-width: none;
+    margin-right: -140px;
+    margin-left: -80px;
 }
 
 .hero-image--tripoli img {
     opacity: 0.32;
     object-fit: contain;
-    transform: translateY(32px) scale(1.05);
+    transform: translateY(44px) scale(1.12);
+    transform-origin: right bottom;
+}
+
+@media (max-width: 1024px) {
+    .hero-image--tripoli {
+        width: clamp(560px, 62vw, 980px);
+        margin-right: -90px;
+        margin-left: -50px;
+    }
+
+    .hero-image--tripoli img {
+        transform: translateY(36px) scale(1.1);
+    }
 }
 
 .hero-badge-pill {
@@ -677,15 +692,20 @@ img {
     }
 
     .hero-image--tripoli img {
-        max-height: 360px;
+        height: min(48vh, 480px);
+        max-height: none;
+        width: auto;
+        max-width: none;
         opacity: 0.38;
-        transform: none;
+        transform: translateY(10px) scale(1.06);
+        transform-origin: center bottom;
     }
 
     .hero-image--tripoli {
-        width: calc(100% + (2 * var(--spacing-md)));
-        margin-left: calc(-1 * var(--spacing-md));
-        margin-right: calc(-1 * var(--spacing-md));
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        justify-content: center;
     }
 
     .nav-links {
