@@ -308,6 +308,16 @@ img {
     margin-bottom: 15px;
 }
 
+.section-intro-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* About Cards */
 .about-content {
     display: grid;
@@ -1040,7 +1050,8 @@ img {
         display: none;
     }
 
-    .about-content {
+    .about-content,
+    .expo-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1302,17 +1313,7 @@ img {
 }
 
 #downloadButton {
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3);
     margin-top: 10px;
-}
-
-#downloadButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(52, 168, 83, 0.4);
 }
 
 @media (max-width: 900px) {
