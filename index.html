@@ -71,7 +71,7 @@
                 </p>
                 <div class="cta-group">
                     <a href="https://rsvp.gdglebanon.com/" target="_blank" class="btn btn-primary">Get Tickets</a>
-                    <a href="#agenda" class="btn btn-secondary">View Agenda</a>
+                    <a href="#" target="_blank" class="btn btn-secondary">View Agenda</a>
                 </div>
             </div>
             <div class="hero-image hero-image--tripoli" aria-hidden="true">
@@ -88,7 +88,8 @@
             <div class="about-surface">
                 <div class="about-header reveal-up">
                     <h2 class="about-title">About DevFest</h2>
-                    <p class="about-description">DevFest is GDG’s flagship community conference—bringing developers together for talks, workshops, and networking.</p>
+                    <p class="about-description">DevFest is GDG’s flagship community conference—bringing developers
+                        together for talks, workshops, and networking.</p>
                 </div>
 
                 <div class="about-grid">
@@ -174,9 +175,38 @@
                 <h2>Agenda</h2>
                 <p>Explore our sessions across 4 auditoriums.</p>
             </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="#" class="btn btn-primary" style="padding: 16px 48px; font-size: 1.1rem;">View Full Agenda</a>
+
+            <!-- Search Bar -->
+            <div class="agenda-search-container">
+                <input type="text" id="agendaSearch" placeholder="Search sessions, speakers, or topics..."
+                    class="agenda-search-input">
+            </div>
+
+            <!-- Agenda Controls -->
+            <div class="agenda-container">
+                <!-- Desktop/Tablet Track View -->
+                <div id="agenda-tracks" class="agenda-tracks">
+                    <!-- Tracks (Columns) will be injected here by JS -->
+                </div>
+
+                <!-- Mobile List View -->
+                <div id="mobile-agenda" class="mobile-agenda">
+                    <div id="happening-now-container" class="happening-now-section" style="display: none;">
+                        <h3 class="mobile-section-title">Happening Now 🔥</h3>
+                        <div id="happening-now-grid" class="mobile-grid"></div>
+                    </div>
+
+                    <div id="upcoming-container" class="upcoming-section">
+                        <h3 class="mobile-section-title">Schedule</h3>
+                        <div id="mobile-agenda-grid" class="mobile-grid"></div>
+                    </div>
+
+                    <div id="previous-sessions-container" class="previous-section" style="display: none;">
+                        <button id="show-previous-btn" class="btn btn-secondary full-width">See Previous
+                            Sessions</button>
+                        <div id="previous-sessions-grid" class="mobile-grid hidden-sessions"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -238,7 +268,8 @@
 
                     <div class="form-group">
                         <label for="photoUpload" class="file-upload-btn btn btn-secondary">
-                            <span class="camera-icon" aria-hidden="true"></span><span id="file-chosen-text">Upload Your Photo</span>
+                            <span class="camera-icon" aria-hidden="true"></span><span id="file-chosen-text">Upload Your
+                                Photo</span>
                         </label>
                         <input type="file" id="photoUpload" accept="image/*" class="hidden">
                         <p id="dragHint" class="hint hidden">Click and drag photo in preview to reposition.</p>
