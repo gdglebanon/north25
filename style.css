@@ -514,24 +514,6 @@ img {
     gap: 30px;
 }
 
-#event-visual {
-    background: radial-gradient(circle at top, rgba(66, 133, 244, 0.04) 0%, rgba(52, 168, 83, 0.04) 40%, transparent 80%);
-}
-
-.event-visual-card {
-    max-width: 960px;
-    margin: 0 auto;
-    border-radius: 0;
-    overflow: visible;
-    box-shadow: none;
-}
-
-.event-visual-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
 .card {
     background: white;
     padding: 30px;
