@@ -677,8 +677,15 @@ img {
     }
 
     .hero-image--tripoli img {
-        max-height: 280px;
-        opacity: 0.32;
+        max-height: 360px;
+        opacity: 0.38;
+        transform: none;
+    }
+
+    .hero-image--tripoli {
+        width: calc(100% + (2 * var(--spacing-md)));
+        margin-left: calc(-1 * var(--spacing-md));
+        margin-right: calc(-1 * var(--spacing-md));
     }
 
     .nav-links {
