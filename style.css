@@ -1315,13 +1315,6 @@ img {
 
 #downloadButton {
     margin-top: 10px;
-    box-shadow: none;
-}
-
-#downloadButton:hover {
-    background-color: var(--google-green);
-    box-shadow: none;
-    transform: none;
 }
 
 @media (max-width: 900px) {
