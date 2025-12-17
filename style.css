@@ -171,6 +171,23 @@ img {
     align-items: center;
 }
 
+.hero-visual {
+    position: relative;
+    z-index: 2;
+    max-width: 380px;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .hero-badge-pill {
     display: inline-flex;
     align-items: center;
@@ -620,6 +637,20 @@ img {
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .hero-image {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-visual {
+        max-width: 320px;
     }
 
     .nav-links {
