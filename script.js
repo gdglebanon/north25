@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DevFest North 2025 website loaded!');
+    document.documentElement.dataset.js = 'true';
 
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -66,6 +67,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const searchTerm = e.target.value.toLowerCase();
             filterSessions(searchTerm);
         });
+    }
+
+    // Optional: Scroll reveal (respects reduced motion)
+    const revealElements = document.querySelectorAll('.reveal-up');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (revealElements.length > 0) {
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            revealElements.forEach((el) => el.classList.add('is-visible'));
+        } else {
+            const observer = new IntersectionObserver(
+                (entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.12, rootMargin: '0px 0px -10% 0px' }
+            );
+
+            revealElements.forEach((el) => observer.observe(el));
+        }
     }
 });
 
