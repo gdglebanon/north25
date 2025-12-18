@@ -2,6 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DevFest North 2025 website loaded!');
     document.documentElement.dataset.js = 'true';
 
+    // Handle Code of Conduct link on mobile
+    const conductLink = document.querySelector('.conduct-link');
+    if (conductLink) {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            conductLink.removeAttribute('target');
+        }
+    }
+
+    // Handle Participation Terms link
+    const participationTermsLink = document.querySelector('.participation-terms-link');
+    if (participationTermsLink) {
+        participationTermsLink.addEventListener('click', (e) => {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (!isMobile) {
+                e.preventDefault();
+                // Open in modal on desktop
+                openParticipationTermsModal();
+            }
+            // On mobile, let it open in the same page (default behavior)
+        });
+    }
+
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -362,11 +385,14 @@ function renderMobileAgenda(sessions, speakers) {
 
             // Add Room Label for Mobile
             const roomLabel = document.createElement('div');
-            roomLabel.style.fontSize = '0.8rem';
-            roomLabel.style.fontWeight = 'bold';
-            roomLabel.style.color = 'var(--google-blue)';
-            roomLabel.style.marginBottom = '5px';
-            roomLabel.textContent = `📍 ${session.room}`;
+            roomLabel.className = 'session-room-label';
+            roomLabel.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>${session.room}</span>
+            `;
             card.insertBefore(roomLabel, card.firstChild);
         }
 
@@ -618,6 +644,40 @@ function closeModal(modal) {
     setTimeout(() => {
         modal.style.display = 'none';
     }, 300);
+}
+
+function openParticipationTermsModal() {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('participation-terms-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'participation-terms-modal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2 class="modal-title">Participation Terms</h2>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://gdg.community.dev/forum/forum-for-event-99660-801288/topic/data-privacy-and-security-in-tech-events-507/" 
+                            style="width: 100%; height: 500px; border: none; border-radius: 8px;">
+                    </iframe>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Add close functionality
+        const closeBtn = modal.querySelector('.close-modal');
+        closeBtn.addEventListener('click', () => closeModal(modal));
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal(modal);
+        });
+    }
+    
+    modal.style.display = 'block';
+    setTimeout(() => modal.classList.add('show'), 10);
 }
 
 function openSponsorModal(sponsor) {
