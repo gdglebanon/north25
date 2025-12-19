@@ -321,8 +321,15 @@ img {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 .hero-badge-pill .pill-label {
@@ -807,7 +814,7 @@ html[data-js="true"] .reveal-up.is-visible {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.06);
-    border-top: 4px solid var(--google-green);
+    /* border-top removed here, moved to specific classes */
 }
 
 .card:hover {
@@ -818,7 +825,40 @@ html[data-js="true"] .reveal-up.is-visible {
 .card h3 {
     margin-bottom: 15px;
     font-size: 1.5rem;
+    /* Color removed here */
+}
+
+/* Card Color Variants */
+.card-green {
+    border-top: 4px solid var(--google-green);
+}
+
+.card-green h3 {
     color: var(--google-green);
+}
+
+.card-blue {
+    border-top: 4px solid var(--google-blue);
+}
+
+.card-blue h3 {
+    color: var(--google-blue);
+}
+
+.card-red {
+    border-top: 4px solid var(--google-red);
+}
+
+.card-red h3 {
+    color: var(--google-red);
+}
+
+.card-yellow {
+    border-top: 4px solid var(--google-yellow);
+}
+
+.card-yellow h3 {
+    color: var(--google-yellow);
 }
 
 /* Speakers Placeholder */
@@ -952,6 +992,7 @@ html[data-js="true"] .reveal-up.is-visible {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+
     /* Container padding for mobile */
     .container {
         padding: 0 16px;
@@ -963,9 +1004,45 @@ html[data-js="true"] .reveal-up.is-visible {
     }
 
     .hero .container {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+        display: block;
+        /* Stack naturally without flex gap */
+        position: relative;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        /* Ensure text is above image */
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.15;
+        /* Subtle background */
+        pointer-events: none;
+        align-items: center;
+        /* Center image vertically if needed */
+        justify-content: center;
+    }
+
+    .hero-image--tripoli {
+        width: 100%;
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .hero-image--tripoli img {
+        transform: scale(1.5);
+        /* Make it cover more area */
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
     /* Hero text adjustments */
@@ -1143,11 +1220,13 @@ html[data-js="true"] .reveal-up.is-visible {
 
     /* Form inputs mobile */
     .form-input {
-        font-size: 16px; /* Prevent zoom on iOS */
+        font-size: 16px;
+        /* Prevent zoom on iOS */
     }
 
     .agenda-search-input {
-        font-size: 16px; /* Prevent zoom on iOS */
+        font-size: 16px;
+        /* Prevent zoom on iOS */
         padding: 12px 15px;
         padding-left: 45px;
     }
@@ -1253,8 +1332,15 @@ html[data-js="true"] .reveal-up.is-visible {
 }
 
 @keyframes fadeInOut {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1287,7 +1373,8 @@ html[data-js="true"] .reveal-up.is-visible {
 .agenda-container {
     overflow-x: auto;
     padding-bottom: 40px;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
     position: relative;
 }
 
@@ -1379,7 +1466,8 @@ html[data-js="true"] .reveal-up.is-visible {
     justify-content: center;
     gap: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    min-width: 1000px; /* Match agenda-tracks width */
+    min-width: 1000px;
+    /* Match agenda-tracks width */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1415,7 +1503,8 @@ html[data-js="true"] .reveal-up.is-visible {
         text-align: center;
         gap: 10px;
         padding: 15px;
-        min-width: 100%; /* Full width on mobile */
+        min-width: 100%;
+        /* Full width on mobile */
         margin: 15px 0;
     }
 
@@ -1491,7 +1580,8 @@ html[data-js="true"] .reveal-up.is-visible {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-height: 120px; /* Ensure consistent card heights */
+    min-height: 120px;
+    /* Ensure consistent card heights */
     position: relative;
 }
 

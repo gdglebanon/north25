@@ -251,11 +251,12 @@ function renderAgenda(container, data) {
     // 4. Render Chunks
     container.innerHTML = ''; // Clear existing
 
+    const mainRooms = ['Main Auditorium', 'B1008', 'B105'];
+
     chunks.forEach(chunk => {
         if (chunk.type === 'common') {
             const commonEl = document.createElement('div');
-            commonEl.className = 'common-session animate-stagger'; // Add animation class
-            // Calculate delay based on existing children count to stagger nicely
+            commonEl.className = 'common-session animate-stagger';
             const delay = container.children.length * 100;
             commonEl.style.animationDelay = `${delay}ms`;
 
@@ -273,22 +274,20 @@ function renderAgenda(container, data) {
                 const trackCol = document.createElement('div');
                 trackCol.className = 'track';
 
-                // Track Header (only needed if it's the first block, or we repeat it? 
-                // User said "repeat it once" implies maybe only at top, but if we break flow, 
-                // we might need headers again or just keep columns aligned. 
-                // Let's try keeping columns aligned by using a grid or flex with consistent widths.
-                // For now, let's re-add headers for clarity in each block, or maybe just for the first one.
-                // Actually, if we break the row, we lose the column visual continuity.
-                // To keep it looking like a table with a row break, we need consistent widths.
-
                 const trackHeader = document.createElement('div');
                 trackHeader.className = 'track-header';
-                trackHeader.textContent = room;
+                // Only show header if it's one of the columns defined in schedule.auditoriums
+                let displayText = room;
+                if (room === 'Workshops Auditorium') {
+                    displayText = 'Workshops/Career skill';
+                }
+                trackHeader.textContent = displayText;
                 trackCol.appendChild(trackHeader);
 
                 const roomSessions = chunk.sessions.filter(s => {
                     if (room === 'Workshops Auditorium') {
-                        return s.room === 'B112' || s.room === 'B108' || s.room === 'Workshops Auditorium';
+                        // Include any room that is NOT in the main list
+                        return !mainRooms.includes(s.room);
                     }
                     return s.room === room;
                 });
@@ -302,13 +301,20 @@ function renderAgenda(container, data) {
                         if (speaker) sessionSpeakers.push(speaker);
                     }
 
+                    // Create card
                     const sessionCard = createSessionCard(session, sessionSpeakers);
 
-                    // Add animation
+                    // For Workshops column on Desktop, show the specific room name
+                    if (room === 'Workshops Auditorium') {
+                        const roomBadge = document.createElement('div');
+                        roomBadge.className = 'session-room-badge';
+                        roomBadge.style.cssText = 'font-size: 0.8rem; background: #e0e0e0; color: #333; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-bottom: 5px; font-weight: bold;';
+                        roomBadge.textContent = session.room;
+                        // Insert at top of card
+                        sessionCard.insertBefore(roomBadge, sessionCard.firstChild);
+                    }
+
                     sessionCard.classList.add('animate-stagger');
-                    // Delay based on room index + session index to ripple across/down
-                    // Using a simpler global counter or based on container children doesn't work well for nested.
-                    // Let's use a random small variance or just index in loop.
                     const delay = (container.children.length * 100) + (Math.random() * 200);
                     sessionCard.style.animationDelay = `${delay}ms`;
 
@@ -384,14 +390,18 @@ function renderMobileAgenda(sessions, speakers) {
             card.addEventListener('click', () => openSessionModal(session));
 
             // Add Room Label for Mobile
+            // Add Room Label for Mobile
             const roomLabel = document.createElement('div');
             roomLabel.className = 'session-room-label';
+
+            let displayRoom = session.room;
+
             roomLabel.innerHTML = `
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                <span>${session.room}</span>
+                <span>${displayRoom}</span>
             `;
             card.insertBefore(roomLabel, card.firstChild);
         }
@@ -667,7 +677,7 @@ function openParticipationTermsModal() {
             </div>
         `;
         document.body.appendChild(modal);
-        
+
         // Add close functionality
         const closeBtn = modal.querySelector('.close-modal');
         closeBtn.addEventListener('click', () => closeModal(modal));
@@ -675,7 +685,7 @@ function openParticipationTermsModal() {
             if (e.target === modal) closeModal(modal);
         });
     }
-    
+
     modal.style.display = 'block';
     setTimeout(() => modal.classList.add('show'), 10);
 }
@@ -1078,3 +1088,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     canvas.addEventListener('touchend', onDragEnd);
     canvas.addEventListener('touchcancel', onDragEnd);
 });
+// Code of Conduct Modal
+const conductLink = document.getElementById('conduct-link');
+const conductModal = document.getElementById('conduct-modal');
+
+if (conductLink && conductModal) {
+    conductLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        conductModal.style.display = 'block';
+        setTimeout(() => conductModal.classList.add('show'), 10);
+    });
+
+    const closeConduct = conductModal.querySelector('.close-modal');
+    if (closeConduct) {
+        closeConduct.addEventListener('click', () => {
+            conductModal.classList.remove('show');
+            setTimeout(() => conductModal.style.display = 'none', 300);
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === conductModal) {
+            conductModal.classList.remove('show');
+            setTimeout(() => conductModal.style.display = 'none', 300);
+        }
+    });
+}
